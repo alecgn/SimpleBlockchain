@@ -11,6 +11,6 @@
 
         public string From { get; private set; }
         public string To { get; private set; }
-        public decimal Value { get; set; } // "set" just allowed here to demonstrate tampering with data
+        public decimal Value { get; set; } // "set" just allowed here to demonstrate tampering data with
     }
 }
