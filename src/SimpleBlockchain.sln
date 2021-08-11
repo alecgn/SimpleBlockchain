@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleBlockchain.Console", "SimpleBlockchain.Console\SimpleBlockchain.Console.csproj", "{E5E63158-9C8C-4777-B491-891C92F89926}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBlockchain", "..\SimpleBlockchain\SimpleBlockchain.csproj", "{0A3D5004-E20E-44A3-90D8-691DA19B2D6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBlockchain", "SimpleBlockchain\SimpleBlockchain.csproj", "{0A3D5004-E20E-44A3-90D8-691DA19B2D6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

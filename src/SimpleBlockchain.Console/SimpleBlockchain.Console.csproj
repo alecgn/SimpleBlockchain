@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SimpleBlockchain\SimpleBlockchain.csproj" />
+    <ProjectReference Include="..\SimpleBlockchain\SimpleBlockchain.csproj" />
   </ItemGroup>
 
 </Project>
