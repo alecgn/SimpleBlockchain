@@ -29,7 +29,7 @@ namespace SimpleBlockchain.Console
             System.Console.WriteLine("Blockchain has a valid integrity: " + chain.CheckChainValidity());
 
             System.Console.WriteLine();
-            var randomIndex = new Random().Next(1, chain.Blockchain.Count); // skip genesis block in index 0
+            var randomIndex = new Random().Next(1, chain.Blockchain.Count); // skip genesis block at index 0
             var randomTransaction = (Transaction)chain.Blockchain[randomIndex].Data;
             System.Console.WriteLine($"Picked a random transaction to tamper data with: {JsonConvert.SerializeObject(randomTransaction)}");
             
