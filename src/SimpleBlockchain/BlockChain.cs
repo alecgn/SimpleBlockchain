@@ -32,7 +32,7 @@ namespace SimpleBlockchain
 
         public bool CheckChainValidity()
         {
-            for (var i = 1; i < Blockchain.Count; i++) // skip genesis block in index 0
+            for (var i = 1; i < Blockchain.Count; i++) // skip genesis block at index 0
             {
                 var currentBlock = Blockchain[i];
                 var previousBlock = Blockchain[i - 1];
