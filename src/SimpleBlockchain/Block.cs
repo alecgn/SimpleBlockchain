@@ -16,7 +16,7 @@ namespace SimpleBlockchain
         }
 
         public DateTime Timestamp { get; private set; }
-        public object Data { get; set; } // "set" just allowed here to demonstrate tampering with data
+        public object Data { get; set; } // "set" just allowed here to demonstrate tampering data with
         public string PreviousHash { get; private set; }
         public string Hash { get; private set; }
 
