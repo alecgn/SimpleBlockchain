@@ -1,4 +1,6 @@
-﻿namespace SimpleBlockchain.Console
+﻿using Newtonsoft.Json;
+
+namespace SimpleBlockchain.Console.Models
 {
     public class Transaction
     {
@@ -12,5 +14,8 @@
         public string From { get; private set; }
         public string To { get; private set; }
         public decimal Value { get; set; } // "set" just allowed here to demonstrate tampering with data
+
+        public string ToJson() =>
+            JsonConvert.SerializeObject(this);
     }
 }
