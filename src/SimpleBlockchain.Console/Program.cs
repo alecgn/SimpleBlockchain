@@ -1,5 +1,4 @@
-﻿using SimpleBlockchain.Console.Models;
-using System;
+﻿using System;
 
 namespace SimpleBlockchain.Console
 {
@@ -30,9 +29,9 @@ namespace SimpleBlockchain.Console
 
             System.Console.WriteLine();
             var randomIndex = new Random().Next(1, chain.Blockchain.Count); // skip genesis block at index 0
-            var randomTransaction = (Transaction)chain.Blockchain[randomIndex].Data;
+            var randomTransaction = (Transaction)chain.Blockchain[randomIndex].Transaction;
             System.Console.WriteLine($"Picked a random transaction to tamper data with: {randomTransaction.ToJson()}");
-            
+
             var tamperedWithValue = 1_000_000M;
             randomTransaction.Value = tamperedWithValue;
             System.Console.WriteLine();

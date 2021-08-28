@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace SimpleBlockchain.Console.Models
+namespace SimpleBlockchain
 {
     public class Transaction
     {

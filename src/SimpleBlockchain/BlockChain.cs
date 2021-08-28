@@ -15,17 +15,17 @@ namespace SimpleBlockchain
             };
         }
 
-        public void AddData(object data)
+        public void AddData(Transaction transaction)
         {
-            var newBlock = new Block(data, GetLatestBlockHash());
+            var newBlock = new Block(transaction, GetLatestBlockHash());
             Blockchain.Add(newBlock);
         }
 
-        public void AddDataRange(params object[] dataRange)
+        public void AddDataRange(params Transaction[] transactions)
         {
-            foreach (var data in dataRange)
+            foreach (var transaction in transactions)
             {
-                var newBlock = new Block(data, GetLatestBlockHash());
+                var newBlock = new Block(transaction, GetLatestBlockHash());
                 Blockchain.Add(newBlock);
             }
         }
@@ -67,7 +67,7 @@ namespace SimpleBlockchain
 
         private static Block StartGenesisBlock()
         {
-            return new Block(new { }, string.Empty);
+            return new Block(new Transaction(string.Empty, string.Empty, decimal.Zero), string.Empty);
         }
 
         private string GetLatestBlockHash()

@@ -1,5 +1,4 @@
 ﻿using CryptographyHelpers.Hash;
-using Newtonsoft.Json;
 using System;
 using System.Text;
 
@@ -7,24 +6,24 @@ namespace SimpleBlockchain
 {
     public class Block
     {
-        public Block(object data, string previousHash)
+        public Block(Transaction transaction, string previousHash)
         {
             Timestamp = DateTime.Now;
-            Data = data;
+            Transaction = transaction;
             PreviousHash = previousHash;
             Hash = ComputeHash();
         }
 
         public DateTime Timestamp { get; private set; }
-        public object Data { get; set; } // "set" just allowed here to demonstrate tampering data with
+        public Transaction Transaction { get; set; } // "set" just allowed here to demonstrate tampering data with
         public string PreviousHash { get; private set; }
         public string Hash { get; private set; }
 
         public string ComputeHash()
         {
-            var blockString = $"{PreviousHash}{Timestamp:yyyy-MM-dd HH:mm:ss.fff}{JsonConvert.SerializeObject(Data)}";
+            var blockString = $"{PreviousHash}{Timestamp:yyyy-MM-dd HH:mm:ss.fff}{Transaction.ToJson()}";
             using var sha256 = new SHA256();
-            
+
             return sha256.ComputeTextHash(blockString).HashString;
         }
 
@@ -32,7 +31,7 @@ namespace SimpleBlockchain
         {
             var sb = new StringBuilder();
             sb.AppendLine($"{nameof(Timestamp)}: {Timestamp: yyyy-MM-dd HH:mm:ss.fff}");
-            sb.AppendLine($"{nameof(Data)}: {JsonConvert.SerializeObject(Data)}");
+            sb.AppendLine($"{nameof(Transaction)}: {Transaction.ToJson()}");
             sb.AppendLine($"{nameof(Hash)}: {Hash}");
             sb.AppendLine($"{nameof(PreviousHash)}: {PreviousHash}");
 
