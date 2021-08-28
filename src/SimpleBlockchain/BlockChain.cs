@@ -15,13 +15,13 @@ namespace SimpleBlockchain
             };
         }
 
-        public void AddData(Transaction transaction)
+        public void AddTransaction(Transaction transaction)
         {
             var newBlock = new Block(transaction, GetLatestBlockHash());
             Blockchain.Add(newBlock);
         }
 
-        public void AddDataRange(params Transaction[] transactions)
+        public void AddTransactionRange(params Transaction[] transactions)
         {
             foreach (var transaction in transactions)
             {

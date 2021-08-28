@@ -10,15 +10,15 @@ namespace SimpleBlockchain.Console
 
             var transaction1 = new Transaction(from: "John", to: "Paul", value: 543.21M);
             System.Console.WriteLine($"Adding {nameof(Transaction)} {transaction1.ToJson()} to the blockchain...");
-            chain.AddData(transaction1);
+            chain.AddTransaction(transaction1);
 
             var transaction2 = new Transaction(from: "Mary", to: "Joana", value: 123.45M);
             System.Console.WriteLine($"Adding {nameof(Transaction)} {transaction2.ToJson()} to the blockchain...");
-            chain.AddData(transaction2);
+            chain.AddTransaction(transaction2);
 
             var transaction3 = new Transaction(from: "Joseph", to: "Mark", value: 987.65M);
             System.Console.WriteLine($"Adding {nameof(Transaction)} {transaction3.ToJson()} to the blockchain...");
-            chain.AddData(transaction3);
+            chain.AddTransaction(transaction3);
 
             System.Console.WriteLine();
             System.Console.WriteLine("Transactions currently in the blockchain:");
